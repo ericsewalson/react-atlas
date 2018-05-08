@@ -70,38 +70,3 @@ Accordion with onClick property:
           <Panel title="Third"><Button/></Panel>
     </Accordion>
 
-Updating Accordion panels by updating parent state:
-
-      initialState = {plans: [
-        {id: 1, planDescription: "Plan One", expanded: true},
-        {id: 2, planDescription: "Plan Two", expanded: false}
-      ]}
-
-      handleToggle = () => {
-        setState({ 
-          plans: [
-            {id: 1, planDescription: "Plan One", expanded: true},
-            {id: 2, planDescription: "Plan Two", expanded: false},
-            {id: 3, planDescription: "Plan Three", expanded: false}
-          ] 
-        })
-      };
-       
-      const Plan = ({ title, expanded }) => {
-        return (
-          <Panel key={title} title={title} expanded={expanded}>
-            Hello there.
-          </Panel>
-        )
-      }
-       
-      <div>
-        <Accordion>
-          {
-            state.plans && state.plans.map((plan) => (
-              <Plan key={plan.planId} title={plan.planDescription} expanded={plan.expanded} />
-            ))
-          }
-        </Accordion><br />
-        <Button primary onClick={handleToggle}>Update State</Button>
-      </div>
