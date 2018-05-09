@@ -72,7 +72,8 @@ const url = {
 
 module.exports = {
   "require": [
-    path.join(__dirname, "src/assets/font-awesome/css/font-awesome.min.css")
+    path.join(__dirname, "src/assets/font-awesome/css/font-awesome.min.css"),
+    path.resolve(__dirname, "styleguideSetup.js")
   ],
   // Use this to test a single component.  Change it to the component you are testing and restart the styleguide server
   // Regex should be: 'src/components/NAME_OF_COMPONENT_FOLDER/[A-Z]*.js'
